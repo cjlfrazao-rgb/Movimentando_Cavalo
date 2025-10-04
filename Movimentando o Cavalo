@@ -1,1 +1,71 @@
+#include <stdio.h>
+
+/*
+  Programa: Movimentação de peças de xadrez
+  Peças: Torre, Bispo, Rainha e Cavalo
+  Objetivo: Demonstrar uso das estruturas de repetição (for, while, do-while e loops aninhados)
+*/
+
+int main() {
+    // Quantidade de movimentos para cada peça
+    int movimentosTorre = 5;
+    int movimentosBispo = 5;
+    int movimentosRainha = 8;
+
+    // Quantidade de movimentos do Cavalo (2 para baixo, 1 para esquerda)
+    int movimentosBaixo = 2;
+    int movimentosEsquerda = 1;
+
+    int i, j; // variáveis de controle
+
+    // ---------------- TORRE ----------------
+    // Usa FOR: anda 5 casas para a direita
+    printf("Movimento da Torre:\n");
+    for(i = 1; i <= movimentosTorre; i++) {
+        printf("Direita\n");
+    }
+
+    printf("\n");
+
+    // ---------------- BISPO ----------------
+    // Usa WHILE: anda 5 casas na diagonal (Cima + Direita)
+    printf("Movimento do Bispo:\n");
+    i = 1;
+    while(i <= movimentosBispo) {
+        printf("Cima, Direita\n");
+        i++;
+    }
+
+    printf("\n");
+
+    // ---------------- RAINHA ----------------
+    // Usa DO-WHILE: anda 8 casas para a esquerda
+    printf("Movimento da Rainha:\n");
+    i = 1;
+    do {
+        printf("Esquerda\n");
+        i++;
+    } while(i <= movimentosRainha);
+
+    printf("\n");
+
+    // ---------------- CAVALO ----------------
+    // Usa FOR + WHILE (loops aninhados)
+    // Movimento em L: duas casas para baixo e uma para a esquerda
+    printf("Movimento do Cavalo:\n");
+
+    // Loop externo (for) controla o movimento para baixo
+    for(i = 1; i <= movimentosBaixo; i++) {
+        printf("Baixo\n");
+    }
+
+    // Loop interno (while) controla o movimento para a esquerda
+    j = 1;
+    while(j <= movimentosEsquerda) {
+        printf("Esquerda\n");
+        j++;
+    }
+
+    return 0;
+}
 
